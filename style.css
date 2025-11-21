@@ -1,0 +1,513 @@
+/* Gonna use a reset */
+/* THE RESET */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+/* -------------------------------------------------------------- */
+
+/* Lets go from low to high specificity in this project */
+/* Lets start with mobile first */
+
+:root {
+  /* Colors */
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  /* Grey */
+  --grey600: rgb(61, 102, 102);
+  --grey550: rgb(82, 120, 120);
+  --grey500: rgb(94, 122, 125);
+  --grey400: rgb(127, 157, 159);
+  --grey300: rgb(158, 187, 189);
+  --grey200: rgb(197, 228, 231);
+  --grey50: rgb(243, 249, 250);
+  /* Green */
+  --green900: rgb(0, 71, 75);
+  --green800: rgb(8, 92, 97);
+  --green750: rgb(13, 104, 109);
+  --green400: rgb(38, 194, 174);
+  --green200: rgb(159, 232, 223);
+  /* Orange */
+  --orange400: rgb(225, 112, 82);
+
+  /* inputs */
+  --form-input-font-size: 24px;
+}
+
+/* COLORS ----------------------- */
+
+.white {
+  color: var(--white);
+}
+
+.black {
+  color: var(--black);
+}
+
+/* Grey */
+
+.grey600 {
+  color: var(--grey600);
+}
+
+.grey550 {
+  color: var(--grey550);
+}
+
+.grey500 {
+  color: var(--grey500);
+}
+
+.grey400 {
+  color: var(--grey400);
+}
+
+.grey300 {
+  color: var(--grey300);
+}
+
+.grey200 {
+  color: var(--grey200);
+}
+
+.grey50 {
+  color: var(--grey50);
+}
+
+/* Green */
+
+.green900 {
+  color: var(--green900);
+}
+
+.green800 {
+  color: var(--green800);
+}
+
+.green750 {
+  color: var(--green750);
+}
+
+.green400 {
+  color: var(--green400);
+}
+
+.green200 {
+  color: var(--green200);
+}
+
+/* Orange */
+
+.orange400 {
+  color: var(--orange400);
+}
+/* COLORS ----------------------- */
+
+/* ---------------------------------- */
+
+/* utilities */
+
+/* Text Properties */
+.fw700 {
+  font-weight: 700;
+}
+.text-preset-1 {
+  font-family: "Space Mono";
+  font-size: 48px;
+  letter-spacing: -1px;
+  line-height: 71px;
+}
+
+.text-preset-2 {
+  font-family: "Space Mono";
+  font-size: 32px;
+  letter-spacing: -0.67px;
+  line-height: 47px;
+}
+
+.text-preset-3 {
+  font-family: "Space Mono";
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 36px;
+  font-weight: bold;
+}
+
+.text-preset-4 {
+  font-family: "Space Mono";
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 30px;
+}
+
+.text-preset-5 {
+  font-family: "Space Mono", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.text-preset-6 {
+  font-family: "Space Mono";
+  font-size: 13px;
+  letter-spacing: 0px;
+  line-height: 19px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper > * {
+  flex-shrink: 1;
+}
+/* Mobile */
+@media (width <= 400px) {
+  /* Tip Calc Container */
+  .tipcalc-container {
+    width: 100%;
+    background-color: var(--white);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+
+  /* Bill Container */
+  /* Bill */
+  .bill-container-mobile {
+    min-width: 311px;
+    height: 432px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .bill-container-bill-input {
+    position: relative;
+  }
+
+  .bill-icon {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+  }
+
+  .bill-input-field-mobile {
+    width: 100%;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: var(--grey50);
+    border: none;
+    display: block;
+    margin-top: 5px;
+    outline: none;
+    text-align: right;
+  }
+
+  /* SELECT TIP% */
+  /* Button Properties */
+  /* Tip Button Field */
+  .tip-btn-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+    font-family: "Space Mono";
+  }
+
+  .btn {
+    min-width: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-tip-radius {
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+    background-color: var(--green200);
+    color: var(--green900);
+  }
+
+  .btn-tip-green-900 {
+    min-width: 116px;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: var(--green900);
+    color: var(--grey50);
+    border: none;
+  }
+
+  .btn-tip-green-500 {
+    min-width: 116px;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: var(--green400);
+    color: var(--green900);
+  }
+
+  .btn-tip-green-200 {
+    min-width: 116px;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: var(--green200);
+    color: var(--green900);
+  }
+
+  .btn-tip-custom {
+    min-width: 116px;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: var(--grey50);
+    color: var(--grey550);
+  }
+
+  /* Number of People */
+
+  .bill-container-bill-people {
+    position: relative;
+  }
+  .nopeople-input-field-mobile {
+    min-width: 100%;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: var(--grey50);
+    border: none;
+    margin-top: 5px;
+    text-align: right;
+    outline: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-wrap: none;
+  }
+
+  .nopeople-input-field-mobile::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+  }
+
+  .person-icon {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+  }
+
+  /* Results Container */
+  .tip-results-section-mobile {
+    min-width: 327px;
+    height: 257px;
+    padding: 24px;
+    background-color: var(--green900);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .results-tip-amount-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .results-total-amount-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* RESET BUTTON */
+  .tip-card-btn {
+    padding: 8px 32px;
+    border: none;
+    background-color: var(--green750);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}
+
+/* Results Container */
+
+/* Form Input Properties */
+
+.input-radius {
+  border-radius: 5px;
+}
+
+.bill-input-field-desktop {
+  min-width: 379px;
+  height: 48px;
+  padding: 8px 16px;
+  background-color: var(--grey300);
+}
+
+.formPeople-placeholder-default-color,
+.formBill-placeholder-default-color {
+  color: var(--grey300);
+}
+
+.formPeople-placeholder-choice-color,
+.formBill-placeholder-choice-color {
+  color: var(--green900);
+}
+
+.formPeople-success,
+.formBill-success {
+  border: 2px solid var(--green400);
+}
+
+.formPeople-error,
+.formPeople-error {
+  border: 2px solid var(--orange400);
+}
+
+.formPeople-icon {
+  background-image: url(./images/icon-person.svg);
+  background-repeat: no-repeat;
+  min-width: 13px;
+  height: 16px;
+}
+
+.formBill-iconn {
+  background-image: url(./images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  min-width: 13px;
+  display: block;
+}
+
+/* Tip Card */
+.calc-container-desktop {
+  min-width: 920px;
+  height: 481px;
+  background-color: white;
+  padding: 32px;
+}
+
+/* TIP RESULTS SECTION */
+.tip-results-section-desktop {
+  min-width: 413px;
+  height: 417px;
+  padding: 24px 32px;
+}
+
+.tip-results-section-tablet {
+  min-width: 413px;
+  height: 417px;
+  padding: 24px 32px;
+}
+
+/* RESET BUTTON */
+
+.tip-card-btn.disabled {
+  background-color: var(--green750);
+  color: var(--green800);
+}
+
+.tip-card-btn.enabled {
+  background-color: var(--green400);
+  color: var(--green900);
+}
+
+.tip-card-btn.enabled:hover {
+  background-color: var(--green200);
+  color: var(--green900);
+}
+
+/* -------------------------------------------- */
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+
+  background-color: var(--grey200);
+}

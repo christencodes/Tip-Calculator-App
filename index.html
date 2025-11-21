@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Splitter Tip Calc</title>
+  </head>
+  <body>
+    <!-- Mobile First Homie -->
+    <div class="content-wrapper">
+      <!-- ------------------------------------------------------- -->
+      <!-- CALCULATOR---------------------------------------------- -->
+      <div class="tipcalc-container">
+        <!--$-------------------------------------$-->
+        <!-- BILL CONTAINER----------------------- -->
+        <div class="bill-container-mobile">
+          <!-- BILL INPUT -->
+          <div class="bill-container-bill-input">
+            <label for="" class="input-label text-preset-5 grey500">Bill</label>
+            <img src="/images/icon-dollar.svg" alt="" class="bill-icon" />
+            <input
+              type="number"
+              placeholder=""
+              class="bill-input-field-mobile input-radius formBill-icon text-preset-3 green900"
+            />
+          </div>
+          <!-- TIP BUTTONS -->
+          <div class="tip-btns">
+            <label for="" class="text-preset-5 grey500">Select Tip%</label>
+            <div class="button-field"></div>
+            <div class="tip-btn-field">
+              <button
+                class="5 btn-tip-green-900 btn btn-tip-radius text-preset-3"
+              >
+                5%
+              </button>
+              <button
+                class="10 btn-tip-green-900 btn btn-tip-radius text-preset-3"
+              >
+                10%
+              </button>
+              <button
+                class="15 btn-tip-green-900 btn btn-tip-radius text-preset-3"
+              >
+                15%
+              </button>
+              <button
+                class="25 btn-tip-green-900 btn btn-tip-radius text-preset-3"
+              >
+                25%
+              </button>
+              <button
+                class="50 btn-tip-green-900 btn btn-tip-radius text-preset-3"
+              >
+                50%
+              </button>
+              <button class="btn-tip-custom btn btn-tip-radius text-preset-3">
+                Custom
+              </button>
+            </div>
+          </div>
+          <!-- NUMBER OF PEOPLE INPUT -->
+          <div class="bill-container-bill-people">
+            <label for="" class="text-preset-5 grey500">Number of People</label>
+            <img src="/images/icon-person.svg" alt="" class="person-icon" />
+            <input
+              type="number"
+              placeholder=""
+              class="nopeople-input-field-mobile input-radius formBill-icon text-preset-3 green900"
+            />
+          </div>
+        </div>
+        <!-- BILL CONTAINER----------------------- -->
+        <!--$-------------------------------------$-->
+
+        <!--$-------------------------------------$-->
+        <!-- RESULTS CONTAINER----------------------- -->
+        <div class="tip-results-section-mobile">
+          <!-- TIP AMOUNT -->
+          <div class="results-tip-amount-container">
+            <div class="results-tip-label">
+              <h2 class="text-preset-5 white">Tip Amount</h2>
+              <p class="text-preset-6 grey400">/person</p>
+            </div>
+            <div class="results-tip-amount">
+              <h2 class="text-preset-2 green400">$0.00</h2>
+            </div>
+          </div>
+
+          <!-- TOTAL -->
+          <div class="results-total-amount-container">
+            <div class="results-total-label">
+              <h2 class="text-preset-5 white">Total</h2>
+              <p class="text-preset-6 grey400">/person</p>
+            </div>
+            <div class="results-total-amount">
+              <h2 class="text-preset-2 green400">$0.00</h2>
+            </div>
+          </div>
+          <button class="btn tip-card-btn text-preset-4 green800">Reset</button>
+        </div>
+        <!-- RESULTS CONTAINER----------------------- -->
+        <!--$-------------------------------------$-->
+      </div>
+      <!-- CALCULATOR---------------------------------------------- -->
+      <!-- ------------------------------------------------------- -->
+    </div>
+  </body>
+</html>
