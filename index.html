@@ -28,11 +28,12 @@
         <div class="bill-container-mobile">
           <!-- BILL INPUT -->
           <div class="bill-container-bill-input">
-            <label for="" class="input-label text-preset-5 grey500">Bill</label>
+            <label class="input-label text-preset-5 grey500">Bill</label>
             <img src="/images/icon-dollar.svg" alt="" class="bill-icon" />
             <input
               type="number"
               placeholder=""
+              id="bill-input"
               class="bill-input-field-mobile input-radius formBill-icon text-preset-3 green900"
             />
           </div>
@@ -78,6 +79,7 @@
             <input
               type="number"
               placeholder=""
+              id="people-input"
               class="nopeople-input-field-mobile input-radius formBill-icon text-preset-3 green900"
             />
           </div>
@@ -95,7 +97,7 @@
               <p class="text-preset-6 grey400">/person</p>
             </div>
             <div class="results-tip-amount">
-              <h2 class="text-preset-2 green400">$0.00</h2>
+              <h2 class="text-preset-2 green400" id="resultTipAmount">$0.00</h2>
             </div>
           </div>
 
@@ -106,7 +108,9 @@
               <p class="text-preset-6 grey400">/person</p>
             </div>
             <div class="results-total-amount">
-              <h2 class="text-preset-2 green400">$0.00</h2>
+              <h2 class="text-preset-2 green400" id="resultTotalAmount">
+                $0.00
+              </h2>
             </div>
           </div>
           <button class="btn tip-card-btn text-preset-4 green800">Reset</button>
@@ -117,5 +121,6 @@
       <!-- CALCULATOR---------------------------------------------- -->
       <!-- ------------------------------------------------------- -->
     </div>
+    <script src="/script.js"></script>
   </body>
 </html>
