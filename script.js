@@ -23,12 +23,46 @@ resultTotalAmount.textContent = "10.00";
 
 const tipButtonsParent = document.querySelector(".tip-btns");
 
+let customTip;
+
 let currentTipPercent = 0;
+
+const resetButton = document.querySelector(".reset-btn");
+console.log(resetButton);
+
+// EVENT LISTENERS
+
+resetButton.addEventListener("click", (e) => {
+  resetCalc();
+});
 
 tipButtonsParent.addEventListener("click", (e) => {
   currentTipPercent = stringToTipNumber(e.target.textContent);
-  console.log(currentTipPercent);
+  inputErrorCheck(billInputField, peopleInputField);
 
+  updateTipAmountAndTotal(currentTipPercent);
+});
+
+window.addEventListener("keypress", (e) => {
+  console.log(e.code);
+
+  customTip = document.getElementById("custom");
+
+  updateTipAmountAndTotal(enterKeypress(e.code, customTip));
+});
+
+// --------------------FUNCTIONS-------------------------
+
+function enterKeypress(keyPress, customTip) {
+  if (keyPress == "Enter") {
+    return stringToTipNumber(customTip.value);
+  } else {
+    console.log("error");
+    return 0;
+  }
+}
+
+function updateTipAmountAndTotal(currentTipPercent) {
   let currentTipPerPerson = calcTipPerPerson(
     billInputField.value,
     currentTipPercent,
@@ -41,12 +75,16 @@ tipButtonsParent.addEventListener("click", (e) => {
     peopleInputField.value
   );
 
-  resultTipAmount.textContent = ` $${currentTipPerPerson}`;
-  resultTotalAmount.textContent = `$${currentTotalPerPerson}`;
-});
+  resultTipAmount.textContent = ` $${currentTipPerPerson.toFixed(2)}`;
+  resultTotalAmount.textContent = `$${currentTotalPerPerson.toFixed(2)}`;
+}
 
 function stringToTipNumber(str) {
-  return Number(str.replace("%", ""));
+  if (str.includes("%")) {
+    return Number(str.replace("%", ""));
+  } else {
+    return Number(str);
+  }
 }
 
 function calcTipPerPerson(currentBill, tipPercentage, people) {
@@ -63,4 +101,30 @@ function calcTotalPerPerson(currentBill, tipPerPerson, people) {
   let billPerPerson = currentBill / people;
   //totalperPerson = tip per person + bill per person
   return tipPerPerson + billPerPerson;
+}
+
+function inputErrorCheck(billInput, nofInput) {
+  if (!nofInput.value || nofInput.value == "0") {
+    nofInput.classList.add("error");
+    nofInput.classList.remove("success");
+  } else {
+    nofInput.classList.remove("error");
+    nofInput.classList.add("success");
+  }
+
+  if (!billInput.value || billInput.value == "0") {
+    billInput.classList.add("error");
+    billInput.classList.remove("success");
+  } else {
+    billInput.classList.remove("error");
+    billInput.classList.add("success");
+  }
+}
+
+function resetCalc() {
+  billInputField.value = 0;
+  peopleInputField.value = 0;
+
+  resultTipAmount.textContent = "$0.00";
+  resultTotalAmount.textContent = "$0.00";
 }

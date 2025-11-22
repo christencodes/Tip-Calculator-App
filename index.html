@@ -12,12 +12,15 @@
     />
     <link
       rel="shortcut icon"
-      href="/images/favicon-32x32.png"
+      href="./images/favicon-32x32.png"
       type="image/x-icon"
     />
     <title>Splitter Tip Calc</title>
   </head>
   <body>
+    <div id="logo-div">
+      <img src="./images/logo.svg" alt="" id="logo" />
+    </div>
     <!-- Mobile First Homie -->
     <div class="content-wrapper">
       <!-- ------------------------------------------------------- -->
@@ -67,9 +70,12 @@
               >
                 50%
               </button>
-              <button class="btn-tip-custom btn btn-tip-radius text-preset-3">
-                Custom
-              </button>
+              <input
+                type="number"
+                placeholder="Custom"
+                id="custom"
+                class="btn-tip-custom btn btn-tip-radius text-preset-3"
+              />
             </div>
           </div>
           <!-- NUMBER OF PEOPLE INPUT -->
@@ -113,7 +119,9 @@
               </h2>
             </div>
           </div>
-          <button class="btn tip-card-btn text-preset-4 green800">Reset</button>
+          <button class="btn tip-card-btn text-preset-4 green800 reset-btn">
+            Reset
+          </button>
         </div>
         <!-- RESULTS CONTAINER----------------------- -->
         <!--$-------------------------------------$-->
